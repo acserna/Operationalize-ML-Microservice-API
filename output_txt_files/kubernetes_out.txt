@@ -1,1 +1,23 @@
-<paste log output from Kubernetes-mediated prediction, here>
+(.devops) ec2-user:~/environment/Operationalize-ML-Microservice-API (master) $ ./run_kubernetes.sh 
+pod/mlapp created
+NAME                                   READY   STATUS              RESTARTS   AGE
+flasksklearn                           0/1     CrashLoopBackOff    37         27h
+kubernetes-bootcamp-57978f5f5d-n684t   1/1     Running             2          33h
+mlapp                                  0/1     ContainerCreating   0          0s
+error: unable to forward port because pod is not running. Current status=Pending
+(.devops) ec2-user:~/environment/Operationalize-ML-Microservice-API (master) $ kubectl get pods
+NAME                                   READY   STATUS             RESTARTS   AGE
+flasksklearn                           0/1     CrashLoopBackOff   37         27h
+kubernetes-bootcamp-57978f5f5d-n684t   1/1     Running            2          33h
+mlapp                                  1/1     Running            0          44s
+(.devops) ec2-user:~/environment/Operationalize-ML-Microservice-API (master) $ ./run_kubernetes.sh 
+Error from server (AlreadyExists): pods "mlapp" already exists
+NAME                                   READY   STATUS             RESTARTS   AGE
+flasksklearn                           0/1     CrashLoopBackOff   37         27h
+kubernetes-bootcamp-57978f5f5d-n684t   1/1     Running            2          33h
+mlapp                                  1/1     Running            0          49s
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+
+Handling connection for 8000
+Handling connection for 8000
